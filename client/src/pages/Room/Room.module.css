@@ -1,0 +1,74 @@
+/** @format */
+
+.wrapper {
+  background: rgb(215, 75, 71);
+  padding: 25px;
+  color: white;
+  position: absolute;
+  width: 750px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.header {
+  font-size: 38px;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chat {
+  margin: 40px 70px;
+  padding: 30px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  display: block;
+}
+
+.input {
+  margin: 12px 0;
+  border-radius: 4px;
+  background-color: #f4f7f5;
+  font-size: 16px;
+  padding: 12px 16px;
+  box-shadow: none;
+  border: none;
+  color: rgb(85, 85, 85);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.submit_button {
+  margin-left: 20px;
+  text-align: center;
+  background-color: #fff;
+  padding: 10px 0;
+  color: rgb(215, 75, 71);
+  border: none;
+  width: 100px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.send_wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.messageArea {
+  max-height: 500px;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+.header_wrapper {
+  position: relative;
+}
