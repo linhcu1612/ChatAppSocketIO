@@ -1,9 +1,9 @@
 /** @format */
 
 const express = require("express");
-const auth = require("./controllers/auth");
-const conv = require("./controllers/conversations");
-const messages = require("./controllers/messages");
+const auth = require("../controllers/auth");
+const conv = require("../controllers/conversations");
+const messages = require("../controllers/messages");
 
 const router = express.Router();
 

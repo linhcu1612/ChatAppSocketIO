@@ -1,16 +1,17 @@
 /** @format */
 
 const express = require("express");
+const bodyParser = require("body-parser");
+const models = require("./models");
 require("express-async-errors");
 const morgan = require("morgan");
 const errorhandler = require("errorhandler");
 const cookieParser = require("cookie-parser");
-const path = require("path");
 const notifier = require("node-notifier");
 const cors = require("cors");
 
-const router = require("./routes");
-const config = require("./config");
+const router = require("./routes/routes");
+const config = require("./config/config");
 
 const {
   ADD_MESSAGE,
@@ -121,4 +122,6 @@ http.listen(config.port, () => {
   console.log(`Server running on port ${config.port}`);
 });
 
-module.exports = app;
+models.initDB();
+
+app.use(bodyParser.json());
