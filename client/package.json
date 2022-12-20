@@ -24,13 +24,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "cross-env PORT=3000 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "devserver": "cross-env NODE_ENV=development nodemon server/src/index.js",
-    "server": "cross-env NODE_ENV=production node server/src/index.js",
-    "dev": "concurrently \"npm run devserver\" \"npm run start\""
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
