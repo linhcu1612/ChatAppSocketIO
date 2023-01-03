@@ -31,7 +31,7 @@ export const WebSocketProvider = ({ children }) => {
   };
 
   if (!socket) {
-    socket = io("wss://individual-project-linhcu1612.herokuapp.com/");
+    socket = io("wss://localhost:3001/");
 
     ws = {
       socket: socket,

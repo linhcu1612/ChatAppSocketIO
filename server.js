@@ -18,9 +18,9 @@ const {
   GET_ROOM,
   GET_MESSAGES,
   DELETE_MESSAGE,
-} = require("./socketio");
+} = require("./socketio/socketio");
 
-const { JOIN_ROOM } = require("./socketEvents");
+const { JOIN_ROOM } = require("./socketio/socketEvents");
 
 function errorNotification(err, str, req) {
   var title = "Error in " + req.method + " " + req.url;

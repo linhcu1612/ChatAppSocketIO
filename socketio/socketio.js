@@ -1,6 +1,6 @@
 /** @format */
 
-const models = require("./models");
+const models = require("../models");
 
 module.exports = {
   ADD_MESSAGE: async (data) => {
