@@ -31,7 +31,7 @@ export const WebSocketProvider = ({ children }) => {
   };
 
   if (!socket) {
-    socket = io("wss://localhost:3001/");
+    socket = io("ws://localhost:3001/");
 
     ws = {
       socket: socket,

@@ -30,6 +30,7 @@ const Login = () => {
   }, [navigate, userInfo]);
 
   const handleSubmit = (e) => {
+    console.log("login in");
     e.preventDefault();
     const data = {
       email: emailRef.current.value,

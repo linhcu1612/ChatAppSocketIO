@@ -15,7 +15,7 @@ router.post("/auth/register", auth.createSession);
 
 router.post("/auth/login", auth.loginUser);
 
-router.get("/auth/", auth.getUser);
+router.get("/auth", auth.getUser);
 
 /* GET conversations returns a list of all current conservations */
 router.get("/api/conversations", conv.getConversations);

@@ -96,6 +96,7 @@ const initDB = async () => {
   await mongoose.connect(config.mongoDBUrl).catch((error) => {
     console.log("error connecting to MongoDB:", error.message);
   });
+  console.log("Connected to MongoDB");
 };
 
 module.exports = { Session, Conversation, Message, initDB };
