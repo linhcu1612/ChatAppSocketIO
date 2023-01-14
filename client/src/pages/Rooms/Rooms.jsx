@@ -1,10 +1,13 @@
 /** @format */
 
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
 import { conversationList } from "../../store/conversation/conversationActions";
+
+import ClearIcon from "@mui/icons-material/Clear";
+import IconButton from "@mui/material/IconButton";
 
 import classes from "./Rooms.module.css";
 
@@ -17,11 +20,23 @@ import { useNavigate } from "react-router-dom";
 
 import { CREATE_ROOM } from "../../routes/CONSTANTS";
 
+import { WebSocketContext } from "../../WebSocket";
+
 import { Link } from "react-router-dom";
 
 export default function Rooms() {
   const dispatch = useDispatch();
   const { conversationInfo } = useSelector((state) => state.conversation);
+
+  const ws = useContext(WebSocketContext);
+
+  const handleDelete = (e, { conversation }) => {
+    e.stopPropagation();
+    const data = {
+      conversation: conversation,
+    };
+    // ws.deleteMessage(data);
+  };
 
   const navigate = useNavigate();
 
@@ -41,6 +56,9 @@ export default function Rooms() {
               }}>
               <ListItemText primary={conversation.title} />
             </ListItemButton>
+            <IconButton onClick={handleDelete}>
+              <ClearIcon />
+            </IconButton>
           </ListItem>
         ))}
       </List>
