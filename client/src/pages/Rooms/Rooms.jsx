@@ -27,14 +27,16 @@ import { Link } from "react-router-dom";
 export default function Rooms() {
   const dispatch = useDispatch();
   const { conversationInfo } = useSelector((state) => state.conversation);
+  const { userInfo } = useSelector((state) => state.auth);
 
   const ws = useContext(WebSocketContext);
 
-  const handleDelete = (e, { conversation }) => {
+  const handleDelete = (e) => {
     e.stopPropagation();
-    const data = {
-      conversation: conversation,
-    };
+    console.log(e);
+    // const data = {
+    //   conversation: conversation,
+    // };
     // ws.deleteMessage(data);
   };
 
@@ -56,9 +58,11 @@ export default function Rooms() {
               }}>
               <ListItemText primary={conversation.title} />
             </ListItemButton>
-            <IconButton onClick={handleDelete}>
-              <ClearIcon />
-            </IconButton>
+            {conversation.creator == userInfo.token && (
+              <IconButton onClick={handleDelete}>
+                <ClearIcon />
+              </IconButton>
+            )}
           </ListItem>
         ))}
       </List>
